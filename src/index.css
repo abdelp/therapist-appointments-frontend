@@ -14,18 +14,21 @@ code {
 
 #root .container-fluid {
   padding-left: 0;
+  height: 100vh;
 }
 
 /* Sidebar */
 
 .sidebar {
-  height: 100vh;
+  height: 100%;
   display: inline-block;
   text-align: right;
   overflow: hidden;
   border-right: 1px solid #e4e4e4;
   position: relative;
   padding-left: 5px;
+  background-color: white;
+  z-index: 2;
 }
 
 /* Hide Hamburger */
@@ -38,6 +41,10 @@ code {
 }
 
 /* Horizontal Menu Items */
+
+.hamburger-icon {
+  cursor: pointer;
+}
 
 .nav-items {
   transition: width 0.5s;
@@ -106,4 +113,74 @@ code {
 
 .sidebar .sm-links .nav li img {
   height: 15px;
+}
+
+/* Page container */
+
+.page-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Home Page */
+#home-page {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  background-color: rgba(151, 191, 15, 0.7);
+}
+
+#home-page header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-form {
+  display: inline-block;
+  border-radius: 40px;
+}
+
+.search-form label {
+  position: relative;
+  cursor: pointer;
+}
+
+.search-form label:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.search-form input {
+  width: 0;
+  margin: 3px;
+  padding: 5px 30px 10px 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: width 1s;
+}
+
+.search-form input:focus {
+  width: 180px;
+}
+
+.home-content::before {    
+  content: "";
+  background-image: url('assets/images/home.jpeg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
 }
