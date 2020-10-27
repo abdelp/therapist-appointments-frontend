@@ -237,6 +237,8 @@ select {
   border-radius: 40px;
   border: 1px solid white;
   margin-right: 5px;
+  padding-left: 10px;
+  background: rgba(151, 191, 15, 0.7);
 }
 
 select::-ms-expand { 
@@ -250,7 +252,6 @@ select::-ms-expand {
   right: 0; 
   bottom: 0; 
   padding: 0 1em; 
-  background: rgba(151, 191, 15, 0.7); 
   pointer-events: none;
   border-radius: 0 40px 40px 0;
 }
@@ -268,4 +269,62 @@ select::-ms-expand {
   font-weight: bold;
   outline: none;
   padding: 0 10px;
+}
+
+/* Therapists page */
+
+#therapists-page {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+}
+
+#therapists-page h4 {
+  color: #c0c0c0;
+}
+
+#therapists-page hr {
+  border: none;
+  border-top: 1px dotted #c0c0c0;
+  border-width: 3px;
+  max-width: 200px;
+}
+
+.slide-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carousel-control-prev {
+  background-color: #97BF0F;
+  height: 50px;
+  border-radius: 0 40px 40px 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.carousel-control-next {
+  background-color: #97BF0F;
+  height: 50px;
+  border-radius: 40px 0 0 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.therapist-item {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.therapist-item img {
+  max-width: 400px;
+}
+
+@media (min-width: 1200px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 100px;
+ }
 }
