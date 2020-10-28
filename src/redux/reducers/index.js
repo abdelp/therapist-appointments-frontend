@@ -1,4 +1,8 @@
 import { combineReducers } from 'redux';
-import sessions from './session';
+import session from './session';
+import therapists from './therapists';
 
-export default combineReducers({ sessions });
+export default combineReducers({
+  session,
+  therapists,
+});
