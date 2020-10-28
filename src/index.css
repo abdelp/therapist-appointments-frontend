@@ -1,14 +1,28 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
 }
 
@@ -20,6 +34,7 @@ code {
 .therapist-link,
 .therapist-link:hover {
   text-decoration: none;
+  color: black;
 }
 
 /* Sidebar */
@@ -40,8 +55,8 @@ code {
 
 #hamburger { display: none; }
 
-.sidebar label { 
-  display: inline-block; 
+.sidebar label {
+  display: inline-block;
   padding: 10px;
 }
 
@@ -86,8 +101,9 @@ code {
 }
 
 .sidebar input:checked ~ .nav-items .links-container { width: 200px; }
+
 .sidebar input:checked ~ .nav-items .links-container .active {
-  background-color:#97BF0F;
+  background-color: #97bf0f;
   color: white;
 }
 
@@ -170,7 +186,7 @@ code {
   cursor: pointer;
 }
 
-.search-form label:after {
+.search-form label::after {
   content: "";
   position: absolute;
   right: 10px;
@@ -196,16 +212,16 @@ code {
 
 .home-content::before,
 #login-page::before,
-#signup-page::before {    
+#signup-page::before {
   content: "";
   background-image: url('assets/images/home.jpeg');
   background-position: center;
   background-size: cover;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   opacity: 0.6;
   z-index: -1;
 }
@@ -217,31 +233,31 @@ code {
 
 /* Select */
 
-select { 
-  -webkit-appearance: none; 
-  -moz-appearance: none; 
-  -ms-appearance: none; 
-  appearance: none; 
-  outline: 0; 
-  background: rgba(151, 191, 15, 0.7); 
-  background-image: none; 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: rgba(151, 191, 15, 0.7);
+  background-image: none;
   border: none;
   width: 100%;
-  height: 100%; 
-  margin: 0; 
-  padding: 0 0 0 .5em; 
-  color: #fff; 
-  cursor: pointer; 
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  color: #fff;
+  cursor: pointer;
   border-radius: 40px 0 0 40px;
 }
 
-.select { 
-  position: relative; 
-  display: block; 
-  width: 10em; 
-  height: 3em; 
+.select {
+  position: relative;
+  display: block;
+  width: 10em;
+  height: 3em;
   line-height: 3;
-  overflow: hidden; 
+  overflow: hidden;
   border-radius: 40px;
   border: 1px solid white;
   margin-right: 5px;
@@ -249,32 +265,32 @@ select {
   background: rgba(151, 191, 15, 0.7);
 }
 
-select::-ms-expand { 
-  display: none; 
+select::-ms-expand {
+  display: none;
 }
 
-.select::after { 
-  content: '\25BC'; 
-  position: absolute; 
-  top: 0; 
-  right: 0; 
-  bottom: 0; 
-  padding: 0 1em; 
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
   pointer-events: none;
   border-radius: 0 40px 40px 0;
 }
 
-.select::after { 
-  -webkit-transition: .25s all ease; 
-  -o-transition: .25s all ease; 
-  transition: .25s all ease; 
-} 
+.select::after {
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
 
 .controls button,
 .control-btn {
   border: none;
   border-radius: 40px;
-  color: #97BF0F;
+  color: #97bf0f;
   font-weight: bold;
   outline: none;
   padding: 0 10px;
@@ -349,7 +365,7 @@ select::-ms-expand {
 }
 
 .carousel-control-prev {
-  background-color: #97BF0F;
+  background-color: #97bf0f;
   height: 50px;
   border-radius: 0 40px 40px 0;
   top: 50%;
@@ -357,7 +373,7 @@ select::-ms-expand {
 }
 
 .carousel-control-next {
-  background-color: #97BF0F;
+  background-color: #97bf0f;
   height: 50px;
   border-radius: 40px 0 0 40px;
   top: 50%;
@@ -379,7 +395,7 @@ select::-ms-expand {
   .carousel-control-prev,
   .carousel-control-next {
     width: 100px;
- }
+  }
 }
 
 .social-media-footer {
