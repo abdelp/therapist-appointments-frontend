@@ -1,10 +1,8 @@
-export const LANDING = '/';
-export const SIGN_UP = '/signup';
-export const SIGN_IN = '/signin';
-export const HOME = '/home';
+export const SIGNUP = '/signup';
+export const LOGIN = '/login';
+export const HOME = '/';
 export const PASSWORD_FORGET = '/password-forget';
-export const USER_APPOINTMENTS = '/users/:id/appointments';
-export const USER_APPOINTMENT_DETAILS = '/users/:user_id/appointments/:appointment_id';
+export const APPOINTMENTS = '/appointments';
 export const THERAPISTS = '/therapists';
 export const THERAPIST_DETAILS = '/therapists/:id';
 export const THERAPIST_APPOINTMENTS = '/therapists/:id/appointments';
