@@ -17,6 +17,11 @@ code {
   height: 100vh;
 }
 
+.therapist-link,
+.therapist-link:hover {
+  text-decoration: none;
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -401,4 +406,11 @@ select::-ms-expand {
 .slide-group .therapist-item .img-container {
   height: 500px;
   overflow: hidden;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  outline: none;
 }
