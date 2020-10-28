@@ -11,7 +11,6 @@ import * as ROUTES from '../../constants/routes';
 
 import Sidebar from '../Sidebar';
 
-import Navigation from '../Navigation';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import HomePage from '../Home';
@@ -21,14 +20,14 @@ const App = () => (
   <Container fluid>
     <Router>
       <Sidebar />
-      <Switch>
-        <div className='page-container'>
+      <div className="page-container">
+        <Switch>
           <Route exact path={ROUTES.HOME} component={HomePage} />
           <Route exact path={ROUTES.LOGIN} component={SignInPage} />
           <Route exact path={ROUTES.SIGNUP} component={SignUpPage} />
           <Route exact path={ROUTES.THERAPISTS} component={TherapistsPage} />
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   </Container>
 );
