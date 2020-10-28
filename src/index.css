@@ -121,6 +121,7 @@ code {
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100vh;
 }
 
 /* Home Page */
@@ -188,7 +189,9 @@ code {
   width: 180px;
 }
 
-.home-content::before {    
+.home-content::before,
+#login-page::before,
+#signup-page::before {    
   content: "";
   background-image: url('assets/images/home.jpeg');
   background-position: center;
@@ -198,7 +201,7 @@ code {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.5;
+  opacity: 0.6;
   z-index: -1;
 }
 
@@ -262,7 +265,8 @@ select::-ms-expand {
   transition: .25s all ease; 
 } 
 
-.controls button {
+.controls button,
+.control-btn {
   border: none;
   border-radius: 40px;
   color: #97BF0F;
@@ -271,11 +275,45 @@ select::-ms-expand {
   padding: 0 10px;
 }
 
+/* Login Page */
+
+#login-page,
+#signup-page {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  background-color: rgba(151, 191, 15, 0.7);
+}
+
+#login-page .content,
+#signup-page .content {
+  max-width: 500px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-page form,
+#signup-page form {
+  padding: 5px;
+}
+
+#login-page form input,
+#signup-page form input {
+  border-radius: 40px;
+}
+
+.error-msg {
+  color: #cf0000;
+}
+
 /* Therapists page */
 
 #therapists-page {
-  position: relative;
-  height: 100vh;
+  position: absolute;
   width: calc(100% - 40px);
   margin-left: 40px;
 }
@@ -291,9 +329,18 @@ select::-ms-expand {
   max-width: 200px;
 }
 
+.therapist-details p {
+  color: #929292;
+}
+
+.loader-container {
+  text-align: center;
+}
+
 .slide-group {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .carousel-control-prev {
@@ -316,6 +363,7 @@ select::-ms-expand {
   width: 100%;
   max-width: 400px;
   text-align: center;
+  margin-top: 5px;
 }
 
 .therapist-item img {
@@ -327,4 +375,30 @@ select::-ms-expand {
   .carousel-control-next {
     width: 100px;
  }
+}
+
+.social-media-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-footer a {
+  margin: 0 5px;
+}
+
+.social-media-footer a img {
+  height: 15px;
+  margin: 15px;
+}
+
+.sm-circular {
+  display: block;
+  border: 3px solid #c0c0c0;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.slide-group .therapist-item .img-container {
+  height: 500px;
+  overflow: hidden;
 }
