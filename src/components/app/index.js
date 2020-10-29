@@ -15,6 +15,8 @@ import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import HomePage from '../Home';
 import TherapistsPage from '../Therapists';
+import TherapistDetailsPage from '../Therapists/show';
+import NewAppointmentPage from '../Appointments/new';
 
 const App = () => (
   <Container fluid>
@@ -26,6 +28,8 @@ const App = () => (
           <Route exact path={ROUTES.LOGIN} component={SignInPage} />
           <Route exact path={ROUTES.SIGNUP} component={SignUpPage} />
           <Route exact path={ROUTES.THERAPISTS} component={TherapistsPage} />
+          <Route exact path={ROUTES.THERAPIST_DETAILS} component={TherapistDetailsPage} />
+          <Route exact path={ROUTES.NEW_APPOINTMENT} component={NewAppointmentPage} />
         </Switch>
       </div>
     </Router>
