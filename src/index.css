@@ -286,7 +286,7 @@ select::-ms-expand {
   transition: 0.25s all ease;
 }
 
-.controls button,
+.controls a,
 .control-btn {
   border: none;
   border-radius: 40px;
@@ -294,6 +294,11 @@ select::-ms-expand {
   font-weight: bold;
   outline: none;
   padding: 0 10px;
+}
+
+.controls a {
+  line-height: 48px;
+  background-color: white;
 }
 
 /* Login Page */
@@ -308,7 +313,8 @@ select::-ms-expand {
 }
 
 #login-page .content,
-#signup-page .content {
+#signup-page .content,
+#new-appointment-page .content {
   max-width: 500px;
   width: 100%;
   position: absolute;
@@ -333,7 +339,8 @@ select::-ms-expand {
 
 /* Therapists page */
 
-#therapists-page {
+#therapists-page,
+#new-appointment-page {
   position: absolute;
   width: calc(100% - 40px);
   margin-left: 40px;
@@ -429,4 +436,78 @@ select::-ms-expand {
   border: none;
   font-weight: bold;
   outline: none;
+}
+
+/* Therapist Details */
+
+#therapist-details-page {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  display: flex;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#therapist-details-page .details-container h2 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #therapist-details-page {
+    flex-wrap: nowrap;
+  }
+
+  #therapist-details-page .details-container {
+    margin: 0;
+  }
+
+  #therapist-details-page .details-container h2 {
+    text-align: right;
+  }
+}
+
+#therapist-details-page .img-container {
+  width: 100%;
+  text-align: center;
+  height: calc(100vh - 30px);
+}
+
+#therapist-details-page .img-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#therapist-details-page .details-container {
+  min-width: 290px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.fees {
+  margin-bottom: 10px;
+}
+
+.fees .line {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.fees .line:nth-child(2n+1) {
+  background-color: #c0c0c0;
+}
+
+.book-appointment-btn {
+  background-color: #97bf0f;
+  border-radius: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+#new-appointment-page {
+  height: 100vh;
 }
