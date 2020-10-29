@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 const HomePage = () => (
   <div id="home-page">
@@ -29,9 +30,9 @@ const HomePage = () => (
               <option value="4">Rio</option>
             </select>
           </div>
-          <button type="button">
+          <NavLink exact to={ROUTES.NEW_APPOINTMENT}>
             Book Now
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
