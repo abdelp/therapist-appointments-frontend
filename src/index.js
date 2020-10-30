@@ -7,6 +7,14 @@ import App from './components/App';
 import store from './redux/store';
 import * as serviceWorker from './serviceWorker';
 
+import { saveState } from './components/LocalStorage';
+
+store.subscribe(() => {
+  saveState({
+    session: store.getState().session,
+  });
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
