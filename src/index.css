@@ -80,6 +80,25 @@ code {
   padding: 0 0 0 10px;
 }
 
+.social-media-footer a {
+  margin: 0 5px;
+}
+
+.controls a {
+  line-height: 48px;
+  background-color: white;
+}
+
+.controls a,
+.control-btn {
+  border: none;
+  border-radius: 40px;
+  color: #97bf0f;
+  font-weight: bold;
+  outline: none;
+  padding: 0 10px;
+}
+
 .nav-items div a {
   padding: 10px;
   text-decoration: none;
@@ -115,6 +134,15 @@ code {
 .sidebar .nav-items .links-container a {
   font-weight: bold;
   color: black;
+}
+
+.therapist-item img {
+  max-width: 400px;
+}
+
+.social-media-footer a img {
+  height: 15px;
+  margin: 15px;
 }
 
 .sidebar .sm-links {
@@ -278,27 +306,9 @@ select::-ms-expand {
   padding: 0 1em;
   pointer-events: none;
   border-radius: 0 40px 40px 0;
-}
-
-.select::after {
   -webkit-transition: 0.25s all ease;
   -o-transition: 0.25s all ease;
   transition: 0.25s all ease;
-}
-
-.controls a,
-.control-btn {
-  border: none;
-  border-radius: 40px;
-  color: #97bf0f;
-  font-weight: bold;
-  outline: none;
-  padding: 0 10px;
-}
-
-.controls a {
-  line-height: 48px;
-  background-color: white;
 }
 
 /* Login Page */
@@ -340,7 +350,8 @@ select::-ms-expand {
 /* Therapists page */
 
 #therapists-page,
-#new-appointment-page {
+#new-appointment-page,
+#appointments-page {
   position: absolute;
   width: calc(100% - 40px);
   margin-left: 40px;
@@ -394,10 +405,6 @@ select::-ms-expand {
   margin-top: 5px;
 }
 
-.therapist-item img {
-  max-width: 400px;
-}
-
 @media (min-width: 1200px) {
   .carousel-control-prev,
   .carousel-control-next {
@@ -408,15 +415,6 @@ select::-ms-expand {
 .social-media-footer {
   display: flex;
   justify-content: center;
-}
-
-.social-media-footer a {
-  margin: 0 5px;
-}
-
-.social-media-footer a img {
-  height: 15px;
-  margin: 15px;
 }
 
 .sm-circular {
@@ -510,4 +508,18 @@ select::-ms-expand {
 
 #new-appointment-page {
   height: 100vh;
+}
+
+/* Appointments */
+
+.appointments-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.appointments-container .titles,
+.appointments-container .appointment-item {
+  justify-content: space-evenly;
+  display: flex;
 }
