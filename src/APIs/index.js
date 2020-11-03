@@ -40,4 +40,51 @@ const getTherapists = async token => {
   }
 };
 
-export { signinUser, getTherapists };
+const createAppointment = async ({ userId, therapistId, date, token }) => {
+  try {
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    };
+
+    const res = await axios
+      .post(
+        `${API_BASE}/users/${userId}/appointments`,
+        {
+          start_at: date,
+          user_id: userId,
+          therapist_id: therapistId,
+        },
+        {
+          headers,
+        },
+      );
+
+    return res;
+  } catch (e) {
+    throw new Error(e.response.data.error);
+  }
+};
+
+const getAppointments = async (userId, token) => {
+  try {
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    };
+
+    const { data } = await axios
+      .get(
+        `${API_BASE}/users/${userId}/appointments`,
+        {
+          headers,
+        },
+      );
+
+    return data;
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
+export { signinUser, getTherapists, createAppointment, getAppointments };
