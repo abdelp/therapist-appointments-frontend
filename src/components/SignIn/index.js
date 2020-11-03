@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { loginUser } from '../../redux/actions';
+import { signinUser } from '../../APIs';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -14,31 +15,21 @@ const INITIAL_STATE = {
 };
 
 const SignInFormBase = ({ history, loginUser }) => {
+  console.log(localStorage);
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const onSubmit = event => {
     const { username, password } = state;
     event.preventDefault();
 
-    fetch('https://hidden-falls-17981.herokuapp.com/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    })
-      .then(resp => resp.json())
-      .then(data => {
-        loginUser({ ...data.user, token: data.token });
+    signinUser(username, password)
+      .then(res => {
+        loginUser({ ...res.data.user, token: res.data.token });
 
         setState({ ...INITIAL_STATE });
         history.push(ROUTES.HOME);
       })
-      .catch(e => console.log(e));
+      .catch(error => setState(state => ({ ...state, error })));
   };
 
   const onChange = e => {
@@ -70,23 +61,25 @@ const SignInFormBase = ({ history, loginUser }) => {
           placeholder="Password"
         />
       </Form.Group>
-      <Button disabled={isInvalid} type="submit">
+      <button disabled={isInvalid} type="submit" className="control-btn">
         Sign In
-      </Button>
-      {state.error && <p>{state.error.message}</p>}
+      </button>
+      {state.error && <p className="error-msg">{state.error.message}</p>}
     </Form>
   );
 };
 
 const SignInForm = connect(
-  null, // Add mapStateToProps to redirect
+  null,
   { loginUser },
 )(withRouter(SignInFormBase));
 
 const SignInPage = () => (
-  <div className="text-center">
-    <h1>Sign In</h1>
-    <SignInForm />
+  <div id="login-page" className="text-center">
+    <div className="content">
+      <h1 className="text-white">Sign In</h1>
+      <SignInForm />
+    </div>
   </div>
 );
 

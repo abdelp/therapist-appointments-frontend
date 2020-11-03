@@ -19,8 +19,8 @@ const TherapistsCarousel = ({
   therapists,
 }) => (
   <Carousel interval={null}>
-    { groupItems(therapists).map((group, idx) => (
-      <Carousel.Item key={`g-${idx}`}>
+    { groupItems(therapists).map(group => (
+      <Carousel.Item key={`g-${group[0].user_id}`}>
         <div className="slide-group">
           {
             group.map(t => (
