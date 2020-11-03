@@ -15,7 +15,6 @@ export default function (state = initialState, action) {
         isError: false,
       };
     case ADD_APPOINTMENTS:
-      console.log(action.payload);
       return {
         ...state,
         isLoading: false,

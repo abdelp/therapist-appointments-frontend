@@ -15,7 +15,6 @@ const INITIAL_STATE = {
 };
 
 const SignInFormBase = ({ history, loginUser }) => {
-  console.log(localStorage);
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const onSubmit = event => {

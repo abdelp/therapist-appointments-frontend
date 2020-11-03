@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
@@ -38,6 +39,17 @@ const TherapistDetailsPage = props => {
       </div>
     </div>
   );
+};
+
+TherapistDetailsPage.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      t: PropTypes.shape({
+        fullname: PropTypes.string,
+        img_url: PropTypes.string,
+      }),
+    }),
+  }).isRequired,
 };
 
 export default TherapistDetailsPage;

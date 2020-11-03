@@ -40,7 +40,9 @@ const getTherapists = async token => {
   }
 };
 
-const createAppointment = async ({ userId, therapistId, date, token }) => {
+const createAppointment = async ({
+  userId, therapistId, date, token,
+}) => {
   try {
     const headers = {
       'Content-Type': 'application/json',
@@ -87,4 +89,6 @@ const getAppointments = async (userId, token) => {
   }
 };
 
-export { signinUser, getTherapists, createAppointment, getAppointments };
+export {
+  signinUser, getTherapists, createAppointment, getAppointments,
+};

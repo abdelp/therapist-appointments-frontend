@@ -14,7 +14,7 @@ import { logoutUser } from '../../redux/actions';
 
 const Sidebar = ({ username, logoutUser }) => (
   <nav className="sidebar">
-    <label htmlFor="hamburger" className="hamburger-icon">&#9776;</label>
+    <label htmlFor="hamburger" className="hamburger-icon">&#9776;</label>   {/* eslint-disable-line */}
     <input type="checkbox" id="hamburger" name="hamburger" />
 
     <div className="nav-items">

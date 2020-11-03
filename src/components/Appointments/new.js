@@ -82,8 +82,6 @@ const NewAppointmentFormBase = ({
 const mapStateToProps = state => {
   const { session: { token, id: userId }, therapists: { therapists } } = state;
 
-  console.log(state);
-
   return { userId, token, therapists };
 };
 

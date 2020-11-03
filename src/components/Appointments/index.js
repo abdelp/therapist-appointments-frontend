@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAppointments } from '../../APIs';
 
@@ -65,6 +66,19 @@ const mapStateToProps = state => {
   return {
     appointments, isLoading, isError, token, userId,
   };
+};
+
+Appointments.propTypes = {
+  appointments: PropTypes.arrayOf(PropTypes.object),
+  userId: PropTypes.number,
+  token: PropTypes.string,
+  AddAppointments: PropTypes.func.isRequired,
+};
+
+Appointments.defaultProps = {
+  appointments: [],
+  userId: null,
+  token: '',
 };
 
 export default connect(
