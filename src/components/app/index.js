@@ -17,6 +17,7 @@ import HomePage from '../Home';
 import TherapistsPage from '../Therapists';
 import TherapistDetailsPage from '../Therapists/show';
 import NewAppointmentPage from '../Appointments/new';
+import AppointmentsPage from '../Appointments';
 
 const App = () => (
   <Container fluid>
@@ -30,6 +31,7 @@ const App = () => (
           <Route exact path={ROUTES.THERAPISTS} component={TherapistsPage} />
           <Route exact path={ROUTES.THERAPIST_DETAILS} component={TherapistDetailsPage} />
           <Route exact path={ROUTES.NEW_APPOINTMENT} component={NewAppointmentPage} />
+          <Route exact path={ROUTES.APPOINTMENTS} component={AppointmentsPage} />
         </Switch>
       </div>
     </Router>
