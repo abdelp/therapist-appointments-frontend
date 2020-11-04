@@ -99,6 +99,7 @@ const SignUpFormBase = props => {
       <Button
         type="submit"
         disabled={isInvalid}
+        className="control-btn"
       >
         Sign Up
       </Button>

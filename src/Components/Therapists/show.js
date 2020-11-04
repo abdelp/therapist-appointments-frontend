@@ -36,12 +36,13 @@ const TherapistDetailsPage = props => {
         <NavLink
           exact
           to={{
-          pathname: ROUTES.NEW_APPOINTMENT,
-          state: {
-            therapistId: t.user_id,
-          }
+            pathname: ROUTES.NEW_APPOINTMENT,
+            state: {
+              therapistId: t.user_id,
+            },
           }}
-          className="book-appointment-btn">
+          className="book-appointment-btn"
+        >
           Book Now
         </NavLink>
       </div>
@@ -55,6 +56,7 @@ TherapistDetailsPage.propTypes = {
       t: PropTypes.shape({
         fullname: PropTypes.string,
         img_url: PropTypes.string,
+        user_id: PropTypes.number,
       }),
     }),
   }).isRequired,
