@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-[Poke-Link](https://safe-island-02494.herokuapp.com/)
+[Link](https://gentle-citadel-98988.herokuapp.com/)
 
 
 ## Getting Started
@@ -35,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 Clone or download the repo:
 
 ```
-git clone https://github.com/abdelp/poke-catalog-react.git
+git clone https://github.com/abdelp/therapist-appointments-frontend.git
 ```
 
 ### Install
