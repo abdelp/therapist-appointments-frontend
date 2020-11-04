@@ -68,14 +68,14 @@ The application uses JWT authentications, to handle any request after successful
 
 ### Below is a list of the API end points used by this application.
 
-| Endpoint                       | Functionality                                 | Authentication |
-| ------------------------------ | --------------------------------------------- | -------------- |
-| POST /users                    | User Signup                                   | NA             |
-| POST /login                    | User Login                                    | NA             |
-| GET /therapists                | Get Therapists List                           | NA             |
-| GET /therapists/:id            | Get Therapist Information                     | NA             |
-| GET /uses/:id/appointments     | Get appointments of specific user             | token          |
-| POST /appointments             | Create a new Appointment                      | token          |
+| Endpoint                   | Params                      | Headers                     | Functionality                     | Authentication |
+| -------------------------- | --------------------------- | --------------------------- | --------------------------------- | -------------- |
+| POST /users                | {email, username, password} | NA                          | User Signup                       | NA             |
+| POST /login                | {username, password}        | NA                          | User Login                        | NA             |
+| GET /therapists            | NA                          | NA                          | Get Therapists List               | NA             |
+| GET /therapists/:id        | NA                          | NA                          | Get Therapist Information         | NA             |
+| GET /uses/:id/appointments | NA                          | Authorization: Bearer token | Get appointments of specific user | token          |
+| POST /appointments         | NA                          | Authorization: Bearer token | Create a new Appointment          | token          |
 
 ### Deployment
 
