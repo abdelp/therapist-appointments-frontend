@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  createAppointment, getAppointments, getTherapists, signinUser,
+  createAppointment, getTherapists, signinUser,
 } from '../../APIs';
 import signedInData from './signed-in.json';
 import therapists from './therapists.json';

@@ -10,7 +10,7 @@ import * as ROUTES from '../../constants/routes';
 
 const INITIAL_STATE = {
   date: new Date().toISOString(),
-  therapistId: '',
+  therapistId: 1,
 };
 
 const NewAppointmentFormBase = ({

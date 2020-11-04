@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 import { getAppointments } from '../../APIs';
 
 import { AddAppointments } from '../../redux/actions';
+import * as ROUTES from '../../constants/routes';
 
 const Appointments = ({
-  appointments, userId, token, AddAppointments,
+  history, appointments, userId, token, AddAppointments,
 }) => {
   const handleFetch = async () => {
     try {
       const result = await getAppointments(userId, token);
       AddAppointments(result);
     } catch (e) {
-      throw new Error(e);
+      history.push(ROUTES.LOGIN);
     }
   };
 
@@ -73,6 +74,9 @@ Appointments.propTypes = {
   userId: PropTypes.number,
   token: PropTypes.string,
   AddAppointments: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 Appointments.defaultProps = {
