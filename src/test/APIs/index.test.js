@@ -4,6 +4,7 @@ import {
 } from '../../APIs';
 import signedInData from './signed-in.json';
 import therapists from './therapists.json';
+import newAppointment from './new-appointment.json';
 
 jest.mock('axios');
 
@@ -28,9 +29,21 @@ describe('index API', () => {
     await expect(signinUser({ username: 'abdel', password: '123456' })).rejects.toThrow(errorMessage);
   });
 
-  it('gets appointments of user', async () => {
-    axios.get.mockImplementationOnce(() => Promise.resolve(therapists));
+  it('gets therapists', async () => {
+    axios.get.mockImplementationOnce(() => Promise.resolve(therapists.data));
 
-    await expect(getTherapists()).resolves.toEqual(therapists.data);
+    await expect(getTherapists()).resolves.toEqual(therapists.data.data);
+  });
+
+  it('creates a new appointment', async () => {
+    axios.post.mockImplementationOnce(() => Promise.resolve(newAppointment.data));
+    const appointmentData = {
+      userId: 1,
+      therapistId: 2,
+      date: new Date(),
+      token: '123456',
+    };
+
+    await expect(createAppointment(appointmentData)).resolves.toEqual(newAppointment.data);
   });
 });
