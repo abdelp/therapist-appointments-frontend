@@ -30,7 +30,7 @@ const HomePage = () => (
               <option value="4">Rio</option>
             </select>
           </div>
-          <NavLink exact to={ROUTES.NEW_APPOINTMENT}>
+          <NavLink exact to={ROUTES.THERAPISTS}>
             Book Now
           </NavLink>
         </div>
