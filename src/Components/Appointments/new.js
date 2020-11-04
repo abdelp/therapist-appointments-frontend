@@ -32,7 +32,7 @@ const NewAppointmentFormBase = ({
         setState({ ...INITIAL_STATE });
         history.push(ROUTES.APPOINTMENTS);
       })
-      .catch(error => setState(state => ({ ...state, error })));
+      .catch(() => history.push(ROUTES.LOGIN));
   };
 
   const onChange = e => {
