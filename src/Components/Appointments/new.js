@@ -14,9 +14,9 @@ const INITIAL_STATE = {
 };
 
 const NewAppointmentFormBase = ({
-  userId, token, therapists, history, AddAppointment,
+  userId, token, therapists, history, AddAppointment, location,
 }) => {
-  const [state, setState] = useState({ ...INITIAL_STATE });
+  const [state, setState] = useState({ ...INITIAL_STATE, therapistId: location.state.therapistId });
 
   const onSubmit = event => {
     const { date, therapistId } = state;
@@ -114,12 +114,18 @@ NewAppointmentFormBase.propTypes = {
     }),
   ),
   AddAppointment: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      therapistId: PropTypes.number,
+    }),
+  }),
 };
 
 NewAppointmentFormBase.defaultProps = {
   userId: null,
   token: '',
   therapists: [],
+  location: { state: { therapistId: null } },
 };
 
 export default NewAppointmentPage;

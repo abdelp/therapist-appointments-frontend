@@ -33,7 +33,15 @@ const TherapistDetailsPage = props => {
             <div>48 Months</div>
           </div>
         </div>
-        <NavLink exact to={ROUTES.NEW_APPOINTMENT} className="book-appointment-btn">
+        <NavLink
+          exact
+          to={{
+          pathname: ROUTES.NEW_APPOINTMENT,
+          state: {
+            therapistId: t.user_id,
+          }
+          }}
+          className="book-appointment-btn">
           Book Now
         </NavLink>
       </div>
