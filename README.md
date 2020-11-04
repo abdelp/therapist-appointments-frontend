@@ -115,6 +115,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse Inc.
+- Design Idea by [Murat Korkmaz](https://www.behance.net/muratk) [https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign]
 
 ## 📝 License
 
