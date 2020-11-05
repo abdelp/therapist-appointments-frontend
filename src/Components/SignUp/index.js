@@ -66,7 +66,7 @@ const SignUpFormBase = props => {
           type="text"
           value={state.username}
           onChange={onChange}
-          placeholder="Full Name"
+          placeholder="Username"
         />
       </Form.Group>
       <Form.Group>
