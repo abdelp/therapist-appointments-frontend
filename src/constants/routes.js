@@ -1,0 +1,10 @@
+export const SIGNUP = '/signup';
+export const LOGIN = '/login';
+export const HOME = '/';
+export const PASSWORD_FORGET = '/password-forget';
+export const APPOINTMENTS = '/appointments';
+export const NEW_APPOINTMENT = '/appointments/new';
+export const THERAPISTS = '/therapists';
+export const THERAPIST_DETAILS = '/therapists/:id';
+export const THERAPIST_APPOINTMENTS = '/therapists/:id/appointments';
+export const THERAPIST_APPOINTMENT_DETAILS = '/therapists/:therapist_id/appointments/:appointment_id';

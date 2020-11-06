@@ -1,13 +1,526 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
+}
+
+#root .container-fluid {
+  padding-left: 0;
+  height: 100vh;
+}
+
+.therapist-link,
+.therapist-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* Sidebar */
+
+.sidebar {
+  height: 100%;
+  display: inline-block;
+  text-align: right;
+  overflow: hidden;
+  border-right: 1px solid #e4e4e4;
+  position: relative;
+  padding-left: 5px;
+  background-color: white;
+  z-index: 2;
+}
+
+/* Hide Hamburger */
+
+#hamburger { display: none; }
+
+.sidebar label {
+  display: inline-block;
+  padding: 10px;
+}
+
+/* Horizontal Menu Items */
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
+.nav-items {
+  transition: width 0.5s;
+}
+
+/* .nav-items, */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  transition: width 0.5s;
+  width: 0;
+  position: relative;
+  padding: 0 0 0 10px;
+}
+
+.social-media-footer a {
+  margin: 0 5px;
+}
+
+.controls a {
+  line-height: 48px;
+  background-color: white;
+}
+
+.controls a,
+.control-btn {
+  border: none;
+  border-radius: 40px;
+  color: #97bf0f;
+  font-weight: bold;
+  outline: none;
+  padding: 0 10px;
+}
+
+.nav-items div a {
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 180px;
+}
+
+.sidebar .sm-links .copyright {
+  width: 0;
+  transition: width 0.1s;
+  max-height: 20px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 10px;
+}
+
+.nav-items .links-container .active {
+  background-color: white;
+}
+
+.sidebar input:checked ~ .nav-items .links-container { width: 200px; }
+
+.sidebar input:checked ~ .nav-items .links-container .active {
+  background-color: #97bf0f;
+  color: white;
+}
+
+.sidebar input:checked ~ .sm-links .copyright {
+  width: 100%;
+  transition: width 0.4s;
+}
+
+.sidebar .nav-items .links-container a {
+  font-weight: bold;
+  color: black;
+}
+
+.therapist-item img {
+  max-width: 400px;
+}
+
+.social-media-footer a img {
+  height: 15px;
+  margin: 15px;
+}
+
+.sidebar .sm-links {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.sidebar .sm-links ul {
+  width: 100%;
+  justify-content: center;
+}
+
+.sidebar .sm-links .nav li {
+  margin-right: 5px;
+}
+
+.sidebar .sm-links .nav li img {
+  height: 15px;
+}
+
+/* Page container */
+
+.page-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Home Page */
+#home-page {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  background-color: rgba(151, 191, 15, 0.7);
+}
+
+.home-content .content {
+  position: absolute;
+  text-align: center;
+  color: white;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.home-content .content hr {
+  border-color: white;
+  max-width: 80%;
+}
+
+#home-page header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+}
+
+.search-form {
+  display: inline-block;
+  border-radius: 40px;
+}
+
+.search-form label {
+  position: relative;
+  cursor: pointer;
+}
+
+.search-form label::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.search-form input {
+  width: 0;
+  margin: 3px;
+  padding: 5px 30px 10px 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: width 1s;
+}
+
+.search-form input:focus {
+  width: 180px;
+}
+
+.home-content::before,
+#login-page::before,
+#signup-page::before {
+  content: "";
+  background-image: url('assets/images/home.jpeg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+/* Select */
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: rgba(151, 191, 15, 0.7);
+  background-image: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 40px 0 0 40px;
+}
+
+.select {
+  position: relative;
+  display: block;
+  width: 10em;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: 40px;
+  border: 1px solid white;
+  margin-right: 5px;
+  padding-left: 10px;
+  background: rgba(151, 191, 15, 0.7);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  pointer-events: none;
+  border-radius: 0 40px 40px 0;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+/* Login Page */
+
+#login-page,
+#signup-page {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  background-color: rgba(151, 191, 15, 0.7);
+}
+
+#login-page .content,
+#signup-page .content,
+#new-appointment-page .content {
+  max-width: 500px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-page form,
+#signup-page form {
+  padding: 5px;
+}
+
+#login-page form input,
+#signup-page form input {
+  border-radius: 40px;
+}
+
+.error-msg {
+  color: #cf0000;
+}
+
+/* Therapists page */
+
+#therapists-page,
+#new-appointment-page,
+#appointments-page {
+  position: absolute;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+}
+
+#therapists-page h4 {
+  color: #c0c0c0;
+}
+
+#therapists-page hr {
+  border: none;
+  border-top: 1px dotted #c0c0c0;
+  border-width: 3px;
+  max-width: 200px;
+}
+
+.therapist-details p {
+  color: #929292;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.slide-group {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.carousel-control-prev {
+  background-color: #97bf0f;
+  height: 50px;
+  border-radius: 0 40px 40px 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.carousel-control-next {
+  background-color: #97bf0f;
+  height: 50px;
+  border-radius: 40px 0 0 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.therapist-item {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media (min-width: 1200px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 100px;
+  }
+}
+
+.social-media-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.sm-circular {
+  display: block;
+  border: 3px solid #c0c0c0;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.slide-group .therapist-item .img-container {
+  height: 500px;
+  overflow: hidden;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  outline: none;
+  min-width: 180px;
+}
+
+/* Therapist Details */
+
+#therapist-details-page {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: 40px;
+  display: flex;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#therapist-details-page .details-container h2 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #therapist-details-page {
+    flex-wrap: nowrap;
+  }
+
+  #therapist-details-page .details-container {
+    margin: 0;
+  }
+
+  #therapist-details-page .details-container h2 {
+    text-align: right;
+  }
+}
+
+#therapist-details-page .img-container {
+  width: 100%;
+  text-align: center;
+  height: calc(100vh - 30px);
+}
+
+#therapist-details-page .img-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#therapist-details-page .details-container {
+  min-width: 290px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.fees {
+  margin-bottom: 10px;
+}
+
+.fees .line {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.fees .line:nth-child(2n+1) {
+  background-color: #c0c0c0;
+}
+
+.book-appointment-btn {
+  background-color: #97bf0f;
+  border-radius: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+#new-appointment-page {
+  height: 100vh;
+}
+
+/* Appointments */
+
+.appointments-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.appointments-container .titles,
+.appointments-container .appointment-item {
+  justify-content: space-evenly;
+  display: flex;
 }
